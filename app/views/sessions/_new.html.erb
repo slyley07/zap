@@ -1,0 +1,23 @@
+<div class="login">
+	<div class="zapHead">
+		<h2>
+			Zap In!
+		</h2>
+	</div>
+
+	<div class="inFull">
+		<div class="logForm">
+			<%= form_tag :user do %>
+				<%= text_field :email %>
+
+				<br>
+
+				<%= text_field :password %>
+
+				<br>
+
+				<%=	submit_tag "ZAP!" %>
+			<% end %>
+		</div>
+	</div>
+</div>

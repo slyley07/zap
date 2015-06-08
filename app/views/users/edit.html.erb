@@ -1,0 +1,52 @@
+<div class="mainHead">
+	<h1>
+		<%= "Welcome #{current_user.username}" %>
+	</h1>
+</div>
+
+<div class="account">
+	<h3>
+		Account Details
+	</h3>
+
+	<form action="/account" method="POST">
+		<div class="formLeft">
+			<input type="text" name="[user]fname" placeholder="First Name" value= <%= current_user.fname %>>
+
+			<br>
+			
+			<input type="text" name="[user]lname" placeholder="Last Name" value= <%= current_user.lname %>>
+
+			<br>
+			
+			<input type="text" name="[user]pnumber" placeholder="Phone e.g. 555-555-5555" value= <%= current_user.pnumber %>>
+
+			<br>
+			
+			<input type="text" name="[user]city" placeholder="City" value= <%= current_user.city %>>
+		</div>
+		
+		<div class="formRight">
+			<input type="text" name="[user]gender" placeholder="Gender" value= <%= current_user.gender %>>
+
+			<br>
+			
+			<input type="text" name="[user]birthday" placeholder="Birthday ddmmyyyy" value= <%= current_user.birthday %>>
+
+			<br>
+			
+			<input type="text" name="[user]website" placeholder="Website" value= <%= current_user.website %>>
+
+			<br>
+			
+			<input type="text" name="[user]superhero" placeholder="Favorite Superhero or Villain" value= <%= current_user.superhero %>>
+		</div>
+		
+		<input type="submit" value="Submit" class="accSubmit">
+		<br>
+	</form>
+
+	<form action="/delete" method="POST">
+		<input type="submit" value="Delete" class="delAcc">
+	</form>
+</div> 

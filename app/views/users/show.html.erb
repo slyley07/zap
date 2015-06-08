@@ -1,0 +1,79 @@
+<div class="mainHead">
+	<h1>
+		<%= "#{current_user.username}'s Profile" %>
+	</h1>
+</div>
+
+<div class="profileInfo">
+	<div class="profileLeft">
+		<ul>
+			<li>
+				Username
+			</li>
+		
+			<li>
+				City
+			</li>
+
+			<li>
+				Gender
+			</li>
+		
+			<li>
+				Favorite Superhero or Villain
+			</li>
+		</ul>
+	</div>
+
+	<div class="profileRight">
+		<ul>
+			<li>
+				<%= current_user.fname %>
+			</li>
+			
+				<li>
+				 <%= current_user.city %>
+				</li>
+
+				<li>
+					<%= current_user.gender %>
+				</li>
+
+				<li>
+					<%= current_user.superhero %>
+				</li>
+		</ul>
+	</div>
+</div>
+
+
+	
+<div class="feedForm">
+	<form action="/feed" method="POST">
+		<div class="feedPost">
+			<textarea name="[post]post" maxlength="150" placeholder="Write your post here"></textarea>
+		</div>
+		
+		<div class="feedSub">
+			<input type="submit" value="ZAP IT!">
+		</div>
+	</form>
+</div>
+
+<% if current_user %>
+	<div class="posts">
+		<!-- create div styled like thought bubble, for reach one it will create one.> -->
+		<% current_user.posts.reverse_each do |tweet| %>
+			<div class="singleThought">
+				<p class="thought">
+					<%= tweet.post %>
+				</p>
+
+				<p class="thoughtId">
+					<%= tweet.created_at.to_s %>
+					<%= tweet.user.username %>
+				</p>
+			</div>
+		<% end %> 
+	</div>
+<% end %>

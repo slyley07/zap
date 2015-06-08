@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>
+	  	Zap
+	  </title>
+	  
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	  
+	  <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+
+	  <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  
+	</head>
+	
+	<body>
+	  <% if flash[:notice] %>
+	    <div class="flash notice">
+	      <%=flash[:notice] %>
+	    </div>
+	  <% end %>
+	  <% if flash[:alert] %>
+	    <div class="flash alert">
+	      <%=flash[:alert] %>
+	    </div>
+	  <% end %>
+		
+		<!-- <div class="weird"> -->
+			<%= yield %>
+		<!-- </div> -->
+
+
+
+			<!-- <img src="/images/batman.png" class="bats"> -->
+
+			
+
+			<!-- <img src="/images/doom.png" class="doom"> -->
+
+		<% if current_user %>
+			<footer>
+				<div class="footAll">
+					<div class="footerUL">
+						<%= render 'shared/nav.html.erb' %>					
+					</div>
+
+					<!-- <div class="icons"> -->
+						<a href="http://www.facebook.com">
+							<img src="/images/icons/facebooklogo.png" class="icon">
+						</a>
+						
+						<a href="http://www.instagram.com">
+							<img src="/images/icons/instalogo.jpg" class="icon">
+						</a>	
+						
+						<a href="http://www.twitter.com">
+							<img src="/images/icons/twitterlogo.png" class="icon">
+						</a>	
+				</div>
+			</footer>
+		<% end %>	
+	</body>
+</html>

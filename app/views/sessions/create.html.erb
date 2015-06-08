@@ -1,0 +1,15 @@
+<%= form_for :user do |f| %>
+	<%= f.text_field :email %>
+
+	<br>
+
+	<%= f.password_field :password %>
+
+	<br>
+
+	<%= f.password_field :password_confirmation %>
+	
+	<br>
+
+	<%= f.submit "ZAP!" %>
+<% end %>

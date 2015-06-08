@@ -1,0 +1,19 @@
+<nav>
+	<ul>
+		<li>
+			<%= link_to 'Feed', all_posts_index_path %>
+		</li>
+
+		<li>
+			<%= link_to 'Account', edit_user_path(current_user) %>
+		</li>
+
+		<li>
+			<%= link_to 'Profile', user_path(@user) %>
+		</li>
+
+		<li>
+			<%= link_to 'ZAP OUT', sessions_destroy_path, method: :destroy %>
+		</li>
+	</ul>
+</nav>

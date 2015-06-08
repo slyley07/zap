@@ -1,0 +1,35 @@
+<div class="mainHead">
+	<h1>
+		<%= "Planet Bugle" %>
+	</h1>
+</div>
+
+<div class="feedForm">
+	<form action="/feed" method="POST">
+		<div class="feedPost">
+			<textarea name="[post]post" maxlength="150" placeholder="Write your post here"></textarea>
+		</div>
+		
+		<div class="feedSub">
+			<input type="submit" value="ZAP IT!">
+		</div>
+	</form>
+</div>
+
+<% if current_user %>
+	<div class="posts">
+		<!-- create div styled like thought bubble, for each one it will create one -->
+		<% @posts.reverse_each do |tweet| -1..-10 %>
+			<div class="singleThought">
+				<p class="thought">
+					<%= tweet.post %>
+				</p>
+
+				<p class="thoughtId">
+					<%= tweet.created_at.to_s %>
+					<%= tweet.user.username %>
+				</p>
+			</div>
+		<% end %> 
+	</div>
+<% end %>
