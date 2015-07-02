@@ -15,474 +15,439 @@
 
 
 @import 'bourbon/bourbon';
+// @import 'grid-settings';
+@import 'neat';
 $mainFont: 'Bangers', cursive;
 $mainFontSize: 2em;
 $headFontSize: 100px;
 $primaryColor: #DB0001;
 $secondaryColor: #EDEF34;
-$tertiaryColor: #FFFFFF;
-$quartinaryColor: #000000;
-$quintinaryColor: #E12422;
+$tertiaryColor: #E12422;
+$white: #FFFFFF;
+$black: #000000;
 $textShadow: -6px 6px 20px #000000;
 $mainWidth: 468px;
 $mainBorder: 2px solid #000000;
 $boxShadow: 0px 8px 28px 0px;
-
-
+@import 'welcome';
 
 body {
+	@include outer-container(100%);
 	padding: 0;
 	margin: 0;
 	font-family: $mainFont;
 	background-image: url('polka.jpg');
 	background-repeat: repeat;
 	background-size: 350px;
-}
 
-.spikeBubble {
-	background-image: url('spike3.png');
-	position: absolute;
-	top: 12px;
-	width: 97%;
-	margin: 0 0 0 38px;
-	text-align: center;
-	z-index: -5;
-
-	width: 478px;
-	height: 215px;
-	z-index: -4;
-	margin: 0 auto;
-}
-
-.mainHead {
-	width: 100%;
-	text-align: center;
-	margin: 75px auto;
-	font-size: 40px;
-
-	h1{
-		color: $primaryColor;
-		text-shadow: $textShadow;
-	}
-}
-
-.weird {
-	width: 1340px;
-	margin: 0 auto 210px auto;
-	height: auto;
-}
-
-
-.navBar {
-	float: left;
-	z-index: -1;
-	background-image: url('speech2.png');
-	background-repeat: no-repeat;
-	background-size: 180px 300px;
-	background-position: center;
-	padding: 120px;
-	height: 265px;
-
-	nav{
-		text-align: center;
-	}
-
-	ul {
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	li {
-		margin: 0;
-		padding: 0;
-	}
-
-	a {
-		text-decoration: none;
-		color: $primaryColor;
-		font-size: $mainFontSize;
-		margin: 0;
-		padding: 0;
-	}
-
-	input {
-		border: none;
-		font-family: $mainFont;
-		font-size: $mainFontSize;
-		background-color: $tertiaryColor;
-		color: $primaryColor;
-		cursor: pointer;
-	}
-}
-
-//BANNER
-
-// .speech {
-// 	position: absolute;
-// 	top: 12px;
-// 	width: 97%;
-// 	margin: 0 0 0 38px;
+//
+// .mainHead {
+// 	width: 100%;
 // 	text-align: center;
-// 	z-index: -5;
-
-// 	img {
-// 		width: 478px;
-// 		height: 215px;
-// 		z-index: -4;
-// 		margin: 0 auto;
+// 	margin: 75px auto;
+// 	font-size: 40px;
+//
+// 	h1{
+// 		color: $primaryColor;
+// 		text-shadow: $textShadow;
 // 	}
 // }
-
-.head {
-	margin: 20px auto;
-	padding-top: 10px;
-	text-align: center;
-	font-size: $headFontSize;
-	z-index: -1;
+//
+// // .weird {
+// // 	width: 1340px;
+// // 	margin: 0 auto 210px auto;
+// // 	height: auto;
+// // }
+//
+//
+// .navBar {
+// 	float: left;
+// 	z-index: -1;
+// 	background-image: url('speech2.png');
+// 	background-repeat: no-repeat;
+// 	background-size: 180px 300px;
+// 	background-position: center;
+// 	padding: 120px;
+// 	height: 265px;
+//
+// 	nav{
+// 		text-align: center;
+// 	}
+//
+// 	ul {
+// 		list-style-type: none;
+// 		padding: 0;
+// 		margin: 0;
+// 	}
+//
+// 	li {
+// 		margin: 0;
+// 		padding: 0;
+// 	}
+//
+// 	a {
+// 		text-decoration: none;
+// 		color: $primaryColor;
+// 		font-size: $mainFontSize;
+// 		margin: 0;
+// 		padding: 0;
+// 	}
+//
+// 	input {
+// 		border: none;
+// 		font-family: $mainFont;
+// 		font-size: $mainFontSize;
+// 		background-color: $white;
+// 		color: $primaryColor;
+// 		cursor: pointer;
+// 	}
+// }
+//
+// //BANNER
+//
+// // .speech {
+// // 	position: absolute;
+// // 	top: 12px;
+// // 	width: 97%;
+// // 	margin: 0 0 0 38px;
+// // 	text-align: center;
+// // 	z-index: -5;
+//
+// // 	img {
+// // 		width: 478px;
+// // 		height: 215px;
+// // 		z-index: -4;
+// // 		margin: 0 auto;
+// // 	}
+// // }
+//
+// .head {
+// 	margin: 20px auto;
+// 	padding-top: 10px;
+// 	text-align: center;
+// 	font-size: $headFontSize;
+// 	z-index: -1;
+// }
+//
+// footer {
+// 	position: fixed;
+// 	background-color: $black;
+// 	right: 0;
+// 	bottom: 0;
+// 	left: 0;
+// 	text-align: center;
+// 	width: 100%;
+// }
+//
+// .footAll {
+// 	width: 180px;
+// 	margin: 0 auto;
+// 	height: 180px;
+// }
+//
+// .footerUL {
+// 	float: left;
+// 	margin: 10px auto;
+// 	font-size: $mainFontSize
+//
+// 	ul {
+// 		list-style-type: none;
+// 		margin: 0;
+// 		padding: 0;
+// 	}
+//
+// 	a {
+// 		color: $secondaryColor;
+// 		text-decoration: none;
+// 	}
+// }
+//
+// .footLog {
+// 	border: none;
+// 	font-family: $mainFont;
+// 	font-size: $mainFontSize / 2;
+// 	background-color: tint($black, 50%);
+// 	color: $secondaryColor;
+// 	cursor: pointer;
+// }
+//
+// .icon {
+// 	width: 44px;
+// 	height: auto;
+// 	border-radius: 10px;
+// 	margin: 5px;
+// }
+//
+// .head {
+// 	h1{
+// 		font-size: 165px;
+// 		margin: 0 auto;
+// 		padding: 0;
+// 		color: $primaryColor;
+// 		text-shadow: $textShadow;
+// 	}
+// }
+//
+// .login {
+// 	float: left;
+// 	// background-color: $black;
+// 	padding: 2px;
+// }
+//
+// .zapHead {
+// 	border: $mainBorder;
+// 	background-color: $secondaryColor;
+// 	padding: 1px;
+// 	margin: 2px auto;
+// }
+//
+// .infull {
+// 	background-color: $white;
+// 	width: 230px;
+// 	float: left;
+// 	height: 200px;
+// 	margin: 2px 0;
+// }
+//
+// .logForm {
+// 	border: $mainBorder;
+// 	background-color: $white;
+// 	margin-top: 4px;
+// 	height: 140px;
+// }
+//
+// .logSubmit {
+// 	border: $mainBorder;
+// 	background-color: $white;
+// 	width: 226px;
+// 	margin: 3px 0;
+//
+// }
+//
+// input {
+// 	margin: 10px auto;
+// 	font-size: $mainFontSize / 2;
+// }
+//
+// .submit {
+// 	font-size: 3em;
+// 	background-color: $tertiaryColor;
+// 	font-family: $mainFont;
+// 	width: 100%;
+// 	margin: 0;
+// 	border: 0;
+// 	color: $secondaryColor;
+// 	cursor: pointer;
+// }
+//
+// .signUp {
+// 	height: 266px;
+// 	float: left;
+// 	padding: 2px;
+// }
+//
+// .zapUp {
+// 	border: $mainBorder;
+// 	background-color: $white;
+// 	padding: 1px;
+// 	margin: 2px auto;
+// }
+//
+// .upFull {
+// 	background-color: $white;
+// 	width: 230px;
+// 	float: left;
+// 	height: 152px;
+// 	margin: 0;
+// }
+//
+// .signForm {
+// 	border: $mainBorder;
+// 	background-color: $white;
+// 	margin: 2px auto;
+// 	height: 140px;
+// }
+//
+// .signSubmit {
+// 	border: $mainBorder;
+// 	background-color: #0000FF;
+// 	width: 226px;
+// 	margin: 3px auto;
+// }
+//
+// .account {
+// 	width: 962px;
+// 	text-align: center;
+// 	border: $mainBorder;
+// 	margin: 0 auto;
+// 	background-color: $white;
+// 	box-shadow: $boxShadow;
+// 	height: 328px;
+//
+// 	h3 {
+// 		border: $mainBorder;
+// 		margin: 2px;
+// 		background-color: $white;
+// 		font-size: 3em;
+// 		background-color: $secondaryColor;
+// 	}
+//
+// 	input[type="text"] {
+// 		font-size: 1em;
+// 		margin: 10px 10px;
+// 		width: 443px;
+// 	}
+// }
+//
+// .formLeft {
+// 	float: left;
+// 	width: 476px;
+// 	border: $mainBorder;
+// 	margin: 0 2px 2px 2px;
+// }
+//
+// .formRight {
+// 	float: left;
+// 	border: $mainBorder;
+// 	margin: 0 0 2px 0;
+// }
+//
+// .accSubmit {
+// 	border: $mainBorder;
+// 	font-family: $mainFont;
+// 	font-size: $mainFontSize * 2;
+// 	// background-color: $white;
+// 	color: $black;
+// 	margin: 0 2px 36px 2px;
+// 	background-color: $primaryColor;
+// 	cursor: pointer;
+// }
+//
+// .delAcc {
+// 	border: $mainBorder;
+// 	font-family: $mainFont;
+// 	font-size: $mainFontSize;
+// 	color: $primaryColor;
+// 	box-shadow: $boxShadow;
+// 	cursor: pointer;
+// }
+//
+// .feedForm {
+// 	width: 962px;
+// 	margin: 10px auto;
+// 	border: $mainBorder;
+// 	background-color: $white;
+// 	height: 58px;
+// 	box-shadow: $boxShadow;
+// }
+//
+// .feedPost {
+// 	width: 500px;
+// 	margin: 2px;
+// 	border: $mainBorder;
+// 	float: left;
+// 	background-color: $white;
+// 	height: 50px;
+//
+// 	textarea {
+// 		width: 490px;
+// 		margin: 2px;
+// 		height: 39px;
+// 		resize: none;
+// 	}
+// }
+//
+// .feedSub {
+// 	width: 450px;
+// 	float: left;
+// 	margin: 2px 2px 2px 0;
+//
+// 	input[type="submit"] {
+// 		width: 450px;
+// 		height: 54px;
+// 		margin: 0 2px 0 0;
+// 		border: $mainBorder;
+// 		background-color: $primaryColor;
+// 		font-family: $mainFont;
+// 		font-size: 3em;
+// 		padding: 2px;
+// 		color: $tertiaryColor;
+// 		cursor: pointer;
+// 	}
+// }
+//
+// .posts {
+// 	width: 1012px;
+// 	margin: 0 auto;
+// 	height: 1000px;
+// }
+//
+// .singleThought {
+// 	background-image: url('speech2.png');
+// 	background-repeat: no-repeat;
+// 	width: 500px;
+// 	height: 200px;
+// 	margin: 0 auto;
+// 	background-position: center;
+// 	background-size: 500px 200px;
+// 	text-align: center;
+// 	float: left;
+// }
+//
+// .thought {
+// 	padding: 25px 40px 0px  53px;
+// 	font-size: 20px;
+// 	width: 392px;
+// 	height: 65px;
+// }
+//
+// .profileInfo {
+// 	width: 580px;
+// 	height: 154px;
+// 	margin: 0 auto;
+// 	background-color: $black;
+// 	border: $mainBorder;
+// 	box-shadow: $boxShadow;
+//
+// 	ul {
+// 		width: 287px;
+// 		list-style-type: none;
+// 		margin: 0 auto;
+// 		padding: 0;
+// 		font-size: 26px;
+// 	}
+//
+// 	li {
+// 		border: $mainBorder;
+// 		margin: 0 0 2px 0;
+// 		padding: 2px;
+// 	}
+// }
+//
+// .profileLeft {
+// 	float: left;
+// 	margin: 2px;
+// }
+//
+// .profileRight {
+// 	float: left;
+// 	margin: 2px 2px 2px 0;
+// }
+//
+// .memList {
+// 	background-color: $black;
+// 	width: 700px;
+// 	margin: 0 auto;
+// 	padding: 2px;
+// 	list-style-type: none;
+// 	text-align: center;
+// 	border: $mainBorder;
+// 	font-size: 28px;
+// 	box-shadow: $boxShadow;
+//
+// 	li {
+// 		border: $mainBorder;
+// 		padding: 3px;
+// 		margin: 2px;
+// 	}
 }
-
-footer {
-	position: fixed;
-	background-color: $quartinaryColor;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	text-align: center;
-	width: 100%;
-}
-
-.footAll {
-	width: 180px;
-	margin: 0 auto;
-	height: 180px;
-}
-
-.footerUL {
-	float: left;
-	margin: 10px auto;
-	font-size: $mainFontSize
-
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-	}
-
-	a {
-		color: $secondaryColor;
-		text-decoration: none;
-	}
-}
-
-.footLog {
-	border: none;
-	font-family: $mainFont;
-	font-size: $mainFontSize / 2;
-	background-color: tint($quartinaryColor, 50%);
-	color: $secondaryColor;
-	cursor: pointer;
-}
-
-.icon {
-	width: 44px;
-	height: auto;
-	border-radius: 10px;
-	margin: 5px;
-}
-
-.head {
-	h1{
-		font-size: 165px;
-		margin: 0 auto;
-		padding: 0;
-		color: $primaryColor;
-		text-shadow: $textShadow;
-	}
-}
-
-.homeForms {
-	padding: 2px;
-	max-width: $mainWidth;
-	width: $mainWidth;
-	margin: 15px auto;
-	border: $mainBorder;
-	height: 288px;
-	background-color: $tertiaryColor;
-	text-align: center;
-	z-index: -10;
-	box-shadow: $boxShadow;
-
-	h2 {
-		display: inline-block;
-		font-size: $mainFontSize * 2;
-		margin: 0 auto;
-		padding: 0;
-		color: $quintinaryColor;
-	}
-}
-
-.login {
-	float: left;
-	// background-color: $quartinaryColor;
-	padding: 2px;
-}
-
-.zapHead {
-	border: $mainBorder;
-	background-color: $secondaryColor;
-	padding: 1px;
-	margin: 2px auto;
-}
-
-.infull {
-	background-color: $tertiaryColor;
-	width: 230px;
-	float: left;
-	height: 200px;
-	margin: 2px 0;
-}
-
-.logForm {
-	border: $mainBorder;
-	background-color: $tertiaryColor;
-	margin-top: 4px;
-	height: 140px;
-}
-
-.logSubmit {
-	border: $mainBorder;
-	background-color: $tertiaryColor;
-	width: 226px;
-	margin: 3px 0;
-
-}
-
-input {
-	margin: 10px auto;
-	font-size: $mainFontSize / 2;
-}
-
-.submit {
-	font-size: 3em;
-	background-color: $quintinaryColor;
-	font-family: $mainFont;
-	width: 100%;
-	margin: 0;
-	border: 0;
-	color: $secondaryColor;
-	cursor: pointer;
-}
-
-.signUp {
-	height: 266px;
-	float: left;
-	padding: 2px;
-}
-
-.zapUp {
-	border: $mainBorder;
-	background-color: $tertiaryColor;
-	padding: 1px;
-	margin: 2px auto;
-}
-
-.upFull {
-	background-color: $tertiaryColor;
-	width: 230px;
-	float: left;
-	height: 152px;
-	margin: 0;
-}
-
-.signForm {
-	border: $mainBorder;
-	background-color: $tertiaryColor;
-	margin: 2px auto;
-	height: 140px;
-}
-
-.signSubmit {
-	border: $mainBorder;
-	background-color: #0000FF;
-	width: 226px;
-	margin: 3px auto;
-}
-
-.account {
-	width: 962px;
-	text-align: center;
-	border: $mainBorder;
-	margin: 0 auto;
-	background-color: $tertiaryColor;
-	box-shadow: $boxShadow;
-	height: 328px;
-
-	h3 {
-		border: $mainBorder;
-		margin: 2px;
-		background-color: $tertiaryColor;
-		font-size: 3em;
-		background-color: $secondaryColor;
-	}
-
-	input[type="text"] {
-		font-size: 1em;
-		margin: 10px 10px;
-		width: 443px;
-	}
-}
-
-.formLeft {
-	float: left;
-	width: 476px;
-	border: $mainBorder;
-	margin: 0 2px 2px 2px;
-}
-
-.formRight {
-	float: left;
-	border: $mainBorder;
-	margin: 0 0 2px 0;
-}
-
-.accSubmit {
-	border: $mainBorder;
-	font-family: $mainFont;
-	font-size: $mainFontSize * 2;
-	// background-color: $tertiaryColor;
-	color: $quartinaryColor;
-	margin: 0 2px 36px 2px;
-	background-color: $primaryColor;
-	cursor: pointer;
-}
-
-.delAcc {
-	border: $mainBorder;
-	font-family: $mainFont;
-	font-size: $mainFontSize;
-	color: $primaryColor;
-	box-shadow: $boxShadow;
-	cursor: pointer;
-}
-
-.feedForm {
-	width: 962px;
-	margin: 10px auto;
-	border: $mainBorder;
-	background-color: $tertiaryColor;
-	height: 58px;
-	box-shadow: $boxShadow;
-}
-
-.feedPost {
-	width: 500px;
-	margin: 2px;
-	border: $mainBorder;
-	float: left;
-	background-color: $tertiaryColor;
-	height: 50px;
-
-	textarea {
-		width: 490px;
-		margin: 2px;
-		height: 39px;
-		resize: none;
-	}
-}
-
-.feedSub {
-	width: 450px;
-	float: left;
-	margin: 2px 2px 2px 0;
-
-	input[type="submit"] {
-		width: 450px;
-		height: 54px;
-		margin: 0 2px 0 0;
-		border: $mainBorder;
-		background-color: $primaryColor;
-		font-family: $mainFont;
-		font-size: 3em;
-		padding: 2px;
-		color: $quintinaryColor;
-		cursor: pointer;
-	}
-}
-
-.posts {
-	width: 1012px;
-	margin: 0 auto;
-	height: 1000px;
-}
-
-.singleThought {
-	background-image: url('speech2.png');
-	background-repeat: no-repeat;
-	width: 500px;
-	height: 200px;
-	margin: 0 auto;
-	background-position: center;
-	background-size: 500px 200px;
-	text-align: center;
-	float: left;
-}
-
-.thought {
-	padding: 25px 40px 0px  53px;
-	font-size: 20px;
-	width: 392px;
-	height: 65px;
-}
-
-.profileInfo {
-	width: 580px;
-	height: 154px;
-	margin: 0 auto;
-	background-color: $quartinaryColor;
-	border: $mainBorder;
-	box-shadow: $boxShadow;
-
-	ul {
-		width: 287px;
-		list-style-type: none;
-		margin: 0 auto;
-		padding: 0;
-		font-size: 26px;
-	}
-
-	li {
-		border: $mainBorder;
-		margin: 0 0 2px 0;
-		padding: 2px;
-	}
-}
-
-.profileLeft {
-	float: left;
-	margin: 2px;
-}
-
-.profileRight {
-	float: left;
-	margin: 2px 2px 2px 0;
-}
-
-.memList {
-	background-color: $quartinaryColor;
-	width: 700px;
-	margin: 0 auto;
-	padding: 2px;
-	list-style-type: none;
-	text-align: center;
-	border: $mainBorder;
-	font-size: 28px;
-	box-shadow: $boxShadow;
-
-	li {
-		border: $mainBorder;
-		padding: 3px;
-		margin: 2px;
-	}
-}
-

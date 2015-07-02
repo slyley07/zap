@@ -1,3 +1,225 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.spikeBubble {
+  @include span-columns(6 of 12);
+  @include shift(3 of 12);
+  background-image: url('spike3.png');
+  background-size: 460px 260px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 270px;
+
+  h1 {
+    @include span-columns(4);
+    @include shift(4);
+    margin-top: 35px;
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 11em;
+    color: $primaryColor;
+    text-shadow: $textShadow;
+  }
+}
+
+.homeForms {
+  @include span-columns(4);
+  @include shift(4);
+  margin-top: 30px;
+  padding: 7px;
+  border: $mainBorder;
+  height: 75px;
+  background-color: $white;
+  text-align: center;
+  box-shadow: $boxShadow;
+
+  // .signin {
+  //   @include span-columns(2 of 4);
+  //   border: 2px solid black;
+  //
+  //   a{
+  //     font-size: 3em;
+  //     color: $primaryColor;
+  //     text-decoration: none;
+  //   }
+  // }
+  //
+  // .signup {
+  //   @include span-columns(2 of 4);
+  //   border: 2px solid black;
+  //
+  //   a{
+  //     font-size: 3em;
+  //     color: $primaryColor;
+  //     text-decoration: none;
+  //   }
+      .modal {
+        $base-border-color: #dcdcdc !default;
+        $base-border-radius: 3px !default;
+        $base-background-color: #fff !default;
+        $base-font-size: 1em !default;
+        $base-line-height: 1.5em !default;
+        $action-color: #477dca !default;
+        $dark-gray: #333 !default;
+        $light-gray: #ddd !default;
+        $medium-screen: em(640) !default;
+        $large-screen: em(860) !default;
+        $base-font-color: $dark-gray !default;
+        $modal-padding: 3em;
+        $modal-background: $base-background-color;
+        $modal-close-color: $light-gray;
+        $modal-image-height: 135px;
+        $modal-image-width: $modal-image-height;
+        $modal-trigger-image-width: 300px;
+
+      label {
+        cursor: pointer;
+        margin-bottom: 0;
+      }
+
+      label img {
+        border-radius: $modal-trigger-image-width / 2;
+        display: block;
+        max-width: $modal-trigger-image-width;
+      }
+
+      .modal-state {
+        display: none;
+      }
+
+      .modal-trigger {
+        padding: 0.8em 1em;
+      }
+
+      .modal-fade-screen { // overlay
+        @include transition(opacity 0.25s ease);
+        @include position(fixed, 0);
+        background-color: rgba(#000, 0.85);
+        opacity: 0;
+        padding-top: 0.6em;
+        text-align: left;
+        visibility: hidden;
+        z-index: 99999999999;
+
+        @include media($large-screen) {
+          padding-top: 10em;
+        }
+
+        .modal-bg {
+          @include position(absolute, 0);
+          cursor: pointer;
+        }
+      }
+
+      .modal-close {
+        @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+        @include size(1.5em);
+        background: $modal-background;
+        cursor: pointer;
+
+        &:after,
+        &:before {
+          @include position(absolute, 3px 3px 0 50%);
+          @include transform(rotate(45deg));
+          @include size(0.15em 1.5em);
+          background: $modal-close-color;
+          content: '';
+          display: block;
+          margin: -3px 0 0 -1px;
+        }
+
+        &:hover:after,
+        &:hover:before {
+          background: darken($modal-close-color, 10%);
+        }
+
+        &:before {
+          @include transform(rotate(-45deg));
+        }
+      }
+
+      .modal-inner {
+        @include transition(opacity 0.25s ease);
+        background: $modal-background;
+        border-radius: $base-border-radius;
+        margin-top: 0;
+        margin: auto;
+        height: 1000px;
+        max-height: 95%;
+        overflow: auto;
+        padding: $modal-padding / 2;
+        position: relative;
+        width: 95%;
+
+        @include media($medium-screen) {
+          max-height: 70%;
+          padding: $modal-padding;
+          width: 60%;
+        }
+
+        @include media($large-screen) {
+          width: 50%;
+        }
+
+        h1 {
+          color: $base-font-color;
+          margin-bottom: 0 0 0.6em 0;
+          text-align: left;
+          text-transform: capitalize;
+        }
+
+        p {
+          color: $base-font-color;
+          line-height: $base-line-height;
+        }
+
+        .modal-intro {
+          font-weight: 800;
+        }
+
+        .modal-content {
+          height: 185px;
+          color: $base-font-color;
+
+          .signin {
+            border: $mainBorder;
+          }
+
+          .signup {
+            border: $mainBorder;
+          }
+
+          @include media($medium-screen) {
+            @include columns(2 8em);
+          }
+        }
+
+        a.cta {
+          color: $base-background-color;
+          display: inline-block;
+          margin-right: 0.5em;
+          margin-top: 1em;
+
+          &:last-child {
+            padding: 0 2em;
+          }
+        }
+      }
+
+      .modal-state:checked + .modal-fade-screen {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-state:checked + .modal-fade-screen .modal-inner {
+        top: 0.5em;
+      }
+    }
+
+    .modal-open {
+      overflow: hidden;
+    }
+  // }
+}

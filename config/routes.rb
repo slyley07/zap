@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  get '/login', to: 'sessions#new'
 
-  get 'sessions/create'
+  post '/login', to: 'sessions#create'
 
-  get 'sessions/destroy'
+  delete '/logout', to: 'sessions#destroy'
   
   get '/posts', to: 'posts#index', as: 'all_posts_index'
 
