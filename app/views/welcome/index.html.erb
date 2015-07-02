@@ -1,15 +1,42 @@
-<div class="container">
-	<div class="row">
-		<h1 class='spikeBubble'>
-			ZAP!
-		</h1>
+<div class="spikeBubble">
+	<h1>
+		ZAP!
+	</h1>
+</div>
+
+<div class="homeForms">
+	<!-- <div class='signin'>
+		<%= link_to "Sign In", login_path %>
 	</div>
 
-	<div class="row">
-		<div class="col-md-6">
-			<div class="homeForms">
-				<%= link_to "Sign in", sessions_new_path %>			
+	<div class='signup'>
+		<%= link_to "Sign Up", new_user_path %>
+	</div> -->
+	<div class="modal">
+	  <label for="modal-1">
+	    <div class="modal-trigger">
+				<p>
+					START HERE!
+				</p>
 			</div>
-		</div>
+	  </label>
+
+		<input class="modal-state" id="modal-1" type="checkbox" />
+
+		<div class="modal-fade-screen">
+	    <div class="modal-inner">
+	      <div class="modal-close" for="modal-1"></div>
+
+				<div class="modal-content">
+					<div class="signin">
+						<%= render partial: 'sessions/new' %>
+					</div>
+
+					<div class="signup">
+						<%= render partial: 'users/form' %>
+					</div>
+				</div>
+	    </div>
+	  </div>
 	</div>
 </div>
