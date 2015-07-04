@@ -1,19 +1,26 @@
-<h1>
-	Zap Up!
-</h1>
+<div class="zapHead">
+	<h1>
+		Zap Up!
+	</h1>
+</div>
 
-<%= form_for :user do |f| %>
-	<%= f.text_field :email, placeholder: "email"  %>
+<div class="inFull">
+	<%= form_for :user do |f| %>
+		<div class="signForm">
+			<%= f.text_field :email, placeholder: "email"  %>
 
-	<br>
+			<br>
 
-	<%= f.password_field :password, placeholder: "password" %>
+			<%= f.password_field :password, placeholder: "password" %>
 
-	<br>
+			<br>
 
-	<%= f.password_field :password_confirmation, placeholder: "confirm your password" %>
+			<%= f.password_field :password_confirmation, placeholder: "confirm your password", class: :confirm %>
 
-	<br>
+			<br>
 
-	<%= f.submit "ZAP!" %>
-<% end %>
+		</div>
+
+		<%= f.submit "ZAP!" %>
+	<% end %>
+</div>

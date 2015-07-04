@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   		redirect_to @user, notice: 'User was successfully updated!'
   		else
   		render :edit
-		end	
+		end
   end
 
   def destroy

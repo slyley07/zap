@@ -4,16 +4,16 @@
 	  <title>
 	  	Zap
 	  </title>
-	  
+
 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <%= csrf_meta_tags %>
-	  
+
 	  <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
-	  
+
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	  
+
 	</head>
-	
+
 	<body>
 	  <% if flash[:notice] %>
 	    <div class="flash notice">
@@ -25,42 +25,33 @@
 	      <%=flash[:alert] %>
 	    </div>
 	  <% end %>
-		
-		<!-- <div class="weird"> -->
+
 		<div class="container">
 			<%= yield %>
 		</div>
-		<!-- </div> -->
 
 
-
-			<!-- <img src="/images/batman.png" class="bats"> -->
-
-			
-
-			<!-- <img src="/images/doom.png" class="doom"> -->
-
-		<% if current_user %>
+		<% if @user == current_user %>
 			<footer>
 				<div class="footAll">
 					<div class="footerUL">
-						<%= render 'shared/nav.html.erb' %>					
+						<%= render 'shared/nav.html.erb' %>
 					</div>
 
 					<!-- <div class="icons"> -->
 						<a href="http://www.facebook.com">
 							<img src="/images/icons/facebooklogo.png" class="icon">
 						</a>
-						
+
 						<a href="http://www.instagram.com">
 							<img src="/images/icons/instalogo.jpg" class="icon">
-						</a>	
-						
+						</a>
+
 						<a href="http://www.twitter.com">
 							<img src="/images/icons/twitterlogo.png" class="icon">
-						</a>	
+						</a>
 				</div>
 			</footer>
-		<% end %>	
+		<% end %>
 	</body>
 </html>

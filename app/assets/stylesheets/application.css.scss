@@ -30,6 +30,7 @@ $mainWidth: 468px;
 $mainBorder: 2px solid #000000;
 $boxShadow: 0px 8px 28px 0px;
 @import 'welcome';
+@import 'users';
 
 body {
 	@include outer-container(100%);
@@ -40,18 +41,23 @@ body {
 	background-repeat: repeat;
 	background-size: 350px;
 
-//
-// .mainHead {
-// 	width: 100%;
-// 	text-align: center;
-// 	margin: 75px auto;
-// 	font-size: 40px;
-//
-// 	h1{
-// 		color: $primaryColor;
-// 		text-shadow: $textShadow;
-// 	}
-// }
+	.spikeBubble {
+	  @include span-columns(6 of 12);
+	  @include shift(3 of 12);
+	  background-image: url('spike3.png');
+	  background-size: 460px 260px;
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  height: 270px;
+
+		h1 {
+	    @include span-columns(4 of 6);
+	    @include shift(1);
+	    text-align: center;
+	    color: $primaryColor;
+	    text-shadow: $textShadow;
+	  }
+	}
 //
 // // .weird {
 // // 	width: 1340px;
@@ -176,103 +182,6 @@ body {
 // 	height: auto;
 // 	border-radius: 10px;
 // 	margin: 5px;
-// }
-//
-// .head {
-// 	h1{
-// 		font-size: 165px;
-// 		margin: 0 auto;
-// 		padding: 0;
-// 		color: $primaryColor;
-// 		text-shadow: $textShadow;
-// 	}
-// }
-//
-// .login {
-// 	float: left;
-// 	// background-color: $black;
-// 	padding: 2px;
-// }
-//
-// .zapHead {
-// 	border: $mainBorder;
-// 	background-color: $secondaryColor;
-// 	padding: 1px;
-// 	margin: 2px auto;
-// }
-//
-// .infull {
-// 	background-color: $white;
-// 	width: 230px;
-// 	float: left;
-// 	height: 200px;
-// 	margin: 2px 0;
-// }
-//
-// .logForm {
-// 	border: $mainBorder;
-// 	background-color: $white;
-// 	margin-top: 4px;
-// 	height: 140px;
-// }
-//
-// .logSubmit {
-// 	border: $mainBorder;
-// 	background-color: $white;
-// 	width: 226px;
-// 	margin: 3px 0;
-//
-// }
-//
-// input {
-// 	margin: 10px auto;
-// 	font-size: $mainFontSize / 2;
-// }
-//
-// .submit {
-// 	font-size: 3em;
-// 	background-color: $tertiaryColor;
-// 	font-family: $mainFont;
-// 	width: 100%;
-// 	margin: 0;
-// 	border: 0;
-// 	color: $secondaryColor;
-// 	cursor: pointer;
-// }
-//
-// .signUp {
-// 	height: 266px;
-// 	float: left;
-// 	padding: 2px;
-// }
-//
-// .zapUp {
-// 	border: $mainBorder;
-// 	background-color: $white;
-// 	padding: 1px;
-// 	margin: 2px auto;
-// }
-//
-// .upFull {
-// 	background-color: $white;
-// 	width: 230px;
-// 	float: left;
-// 	height: 152px;
-// 	margin: 0;
-// }
-//
-// .signForm {
-// 	border: $mainBorder;
-// 	background-color: $white;
-// 	margin: 2px auto;
-// 	height: 140px;
-// }
-//
-// .signSubmit {
-// 	border: $mainBorder;
-// 	background-color: #0000FF;
-// 	width: 226px;
-// 	margin: 3px auto;
 // }
 //
 // .account {

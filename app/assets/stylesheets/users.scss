@@ -1,3 +1,44 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.spikeBubble {
+
+  h1 {
+    font-size: 5em;
+    margin-top: 80px;
+  }
+}
+
+.wrapper {
+  @include span-columns(8);
+  @include shift(2);
+  clear: both;
+  .profileInfo {
+    background-color: $white;
+    border: $mainBorder;
+
+    .profileLeft {
+      display: inline-block;
+      border: $mainBorder;
+
+      li {
+        border: $mainBorder;
+      }
+    }
+
+    .profileRight {
+      display: inline-block;
+      border: $mainBorder;
+
+      li {
+        border: $mainBorder;
+      }
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+    }
+  }
+}
