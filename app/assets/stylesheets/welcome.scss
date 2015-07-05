@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 .spikeBubble h1 {
   font-size: 11em;
   margin-top: 35px;
@@ -189,7 +187,7 @@
               margin-top: 3px;
               height: 60px;
               background-color: $primaryColor;
-              font-family: $mainFont;
+              // font-family: $mainFont;
               color: $secondaryColor;
               font-size: 53px;
             }
@@ -240,7 +238,7 @@
               margin-top: 3px;
               height: 60px;
               background-color: $primaryColor;
-              font-family: $mainFont;
+              // font-family: $mainFont;
               color: $secondaryColor;
               font-size: 53px;
             }

@@ -13,11 +13,12 @@
   @include span-columns(4 of 12);
   @include shift(4 of 12);
   clear: both;
+
   .profileInfo {
     background-color: $white;
     border: $mainBorder;
-    padding: 3px;
-    height: 86px;
+    padding: $mainPadding;
+    height: 105px;
     margin-bottom: 20px;
     box-shadow: $boxShadow;
 
@@ -50,16 +51,85 @@
       box-shadow: $boxShadow;
       border: $mainBorder;
       margin-bottom: 10px;
+      height: 5em;
     }
 
     .feedSub input[type="submit"] {
       @include span-columns(6 of 6);
       border: $mainBorder;
-      font-family: $mainFont;
+      // font-family: $mainFont;
       box-shadow: $boxShadow;
       color: $primaryColor;
       background-color: $secondaryColor;
       font-size: 3em;
+      padding: 0;
+    }
+  }
+
+  .account {
+    background-color: $white;
+    border: $mainBorder;
+    padding: $mainPadding;
+    margin-bottom: 10px;
+
+    h3 {
+      background-color: $secondaryColor;
+      color: $primaryColor;
+      border: $mainBorder;
+      margin: $mainPadding;
+      font-size: 4em;
+      text-align: center;
+    }
+
+    .signForm {
+      padding: $mainPadding;
+      border: $mainBorder;
+      margin: 0 $mainPadding;
+
+      input {
+        border: $mainBorder;
+        margin-bottom: 0px;
+      }
+    }
+
+    input[type="submit"] {
+      width: 99%;
+      border: $mainBorder;
+      color: $secondaryColor;
+      font-size: 4em;
+      padding: 0;
+      margin: 10px $mainPadding;
+    }
+  }
+
+  .warning {
+    background-color: $white;
+    border: $mainBorder;
+    padding: $mainPadding;
+
+    p {
+      font-size: 2em;
+      text-align: center;
+    }
+
+    .deletion {
+      border: $mainBorder;
+      padding: $mainPadding;
+
+
+      h3 {
+        border: $mainBorder;
+        margin-bottom: $mainPadding;
+        background-color: $secondaryColor;
+        color: $primaryColor;
+        font-size: 2em;
+        text-align: center;
+      }
+
+      .closer {
+        width: 145px;
+        margin: 0 auto;
+      }
     }
   }
 }

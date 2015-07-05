@@ -1,6 +1,10 @@
 <div class="spikeBubble">
 	<h1 class="showHead">
-		<%= "#{@user.username}'s Profile" %>
+		<% unless !@user.fname.nil? %>
+			Your Profile
+		<% else %>
+			<%= "#{@user.username}'s Profile" %>
+		<% end %>
 	</h1>
 </div>
 
@@ -25,28 +29,28 @@
 		<div class="profileRight">
 			<ul>
 				<li>
-					<% if !@user.fname.nil? %>
-						<%= @user.fname %>
-					<% else %>
+					<% unless !@user.fname.nil? %>
 						Add your first name!
+					<% else %>
+						<%= @user.username %>
 					<% end %>
 				</li>
 
-					<li>
-						<% if !@user.city.nil? %>
-						  <%= @user.city %>
-						<% else %>
-							Add your city!
-						<% end %>
-					</li>
+				<li>
+					<% unless !@user.city.nil? %>
+						Add your city!
+					<% else %>
+					  <%= @user.city %>
+					<% end %>
+				</li>
 
-					<li>
-						<% if !@user.gender.nil? %>
-							<%= @user.gender %>
-						<% else %>
-							Add your gender!
-						<% end %>
-					</li>
+				<li>
+					<% unless !@user.gender.nil? %>
+						Add your gender!
+					<% else %>
+						<%= @user.gender %>
+					<% end %>
+				</li>
 
 			</ul>
 		</div>
@@ -55,10 +59,10 @@
 	<%= render partial: "posts/new" %>
 
 
-	<% if current_user %>
+	<%# if @user == current_user %>
 		<div class="posts">
 			<!-- create div styled like thought bubble, for reach one it will create one.> -->
-			<% current_user.posts.reverse_each do |tweet| %>
+			<% @user.posts.reverse_each do |tweet| %>
 				<div class="singleThought">
 					<p class="thought">
 						<%= tweet.post %>
@@ -71,5 +75,5 @@
 				</div>
 			<% end %>
 		</div>
-	<% end %>
+	<%# end %>
 </div>

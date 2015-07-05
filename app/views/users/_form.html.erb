@@ -1,26 +1,54 @@
-<div class="zapHead">
-	<h1>
-		Zap Up!
-	</h1>
-</div>
-
 <div class="inFull">
-	<%= form_for :user do |f| %>
+	<%= form_for @user do |f| %>
 		<div class="signForm">
-			<%= f.text_field :email, placeholder: "email"  %>
+			<%= f.email_field :email, placeholder: "email"  %>
 
 			<br>
 
-			<%= f.password_field :password, placeholder: "password" %>
+			<% if @user == current_user %>
+				<%= f.text_field :username, placeholder: "alias" %>
 
-			<br>
+				<br>
 
-			<%= f.password_field :password_confirmation, placeholder: "confirm your password", class: :confirm %>
+				<%= f.text_field :fname, placeholder: "first name" %>
 
-			<br>
+				<br>
 
+				<%= f.text_field :lname, placeholder: "last name" %>
+
+				<br>
+
+				<%= f.telephone_field :pnumber, placeholder: "phone number" %>
+
+				<br>
+
+				<%= f.text_field :city, placeholder: "city" %>
+
+				<br>
+
+				<%= f.text_field :gender, placeholder: "gender" %>
+
+				<br>
+
+				<%= f.text_field :birthday, id: "datepicker", placeholder: "birthday" %>
+
+				<br>
+
+				<%= f.text_field :website, placeholder: "website" %>
+
+
+
+			<% else %>
+				<%= f.password_field :password, placeholder: "password" %>
+
+				<br>
+
+				<%= f.password_field :password_confirmation, placeholder: "confirm your password", class: :confirm %>
+
+				<br>
+			<% end %>
 		</div>
 
-		<%= f.submit "ZAP!" %>
+		<%= f.submit "ZAP!", class: :zap %>
 	<% end %>
 </div>

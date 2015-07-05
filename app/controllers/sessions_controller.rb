@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   		redirect_to @user, notice: "You have been successfully logged in!"
   	else
   		flash[:alert] = "There was a problem. Please try again!"
-  		render :new
+  		redirect_to root_path
     end
   end
 
