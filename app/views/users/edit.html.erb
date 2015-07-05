@@ -1,6 +1,6 @@
 <div class="mainHead">
 	<h1>
-		<%= "Welcome #{current_user.username}" %>
+		<%= "Welcome #{@user.username}" %>
 	</h1>
 </div>
 
@@ -11,37 +11,36 @@
 
 	<form action="/account" method="POST">
 		<div class="formLeft">
-			<input type="text" name="[user]fname" placeholder="First Name" value= <%= current_user.fname %>>
+			<input type="text" name="[user]fname" placeholder="First Name" value= <%= @user.fname %>>
 
 			<br>
-			
-			<input type="text" name="[user]lname" placeholder="Last Name" value= <%= current_user.lname %>>
+
+			<input type="text" name="[user]lname" placeholder="Last Name" value= <%= @user.lname %>>
 
 			<br>
-			
-			<input type="text" name="[user]pnumber" placeholder="Phone e.g. 555-555-5555" value= <%= current_user.pnumber %>>
+
+			<input type="text" name="[user]pnumber" placeholder="Phone e.g. 555-555-5555" value= <%= @user.pnumber %>>
 
 			<br>
-			
-			<input type="text" name="[user]city" placeholder="City" value= <%= current_user.city %>>
+
+			<input type="text" name="[user]city" placeholder="City" value= <%= @user.city %>>
 		</div>
-		
+
 		<div class="formRight">
-			<input type="text" name="[user]gender" placeholder="Gender" value= <%= current_user.gender %>>
+			<input type="text" name="[user]gender" placeholder="Gender" value= <%= @user.gender %>>
 
 			<br>
-			
-			<input type="text" name="[user]birthday" placeholder="Birthday ddmmyyyy" value= <%= current_user.birthday %>>
+
+			<input type="text" name="[user]birthday" placeholder="Birthday ddmmyyyy" value= <%= @user.birthday %>>
 
 			<br>
-			
-			<input type="text" name="[user]website" placeholder="Website" value= <%= current_user.website %>>
+
+			<input type="text" name="[user]website" placeholder="Website" value= <%= @user.website %>>
 
 			<br>
-			
-			<input type="text" name="[user]superhero" placeholder="Favorite Superhero or Villain" value= <%= current_user.superhero %>>
+
 		</div>
-		
+
 		<input type="submit" value="Submit" class="accSubmit">
 		<br>
 	</form>
@@ -49,4 +48,4 @@
 	<form action="/delete" method="POST">
 		<input type="submit" value="Delete" class="delAcc">
 	</form>
-</div> 
+</div>

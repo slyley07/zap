@@ -1,79 +1,75 @@
-<div class="mainHead">
-	<h1>
-		<%= "#{current_user.username}'s Profile" %>
+<div class="spikeBubble">
+	<h1 class="showHead">
+		<%= "#{@user.username}'s Profile" %>
 	</h1>
 </div>
 
-<div class="profileInfo">
-	<div class="profileLeft">
-		<ul>
-			<li>
-				Username
-			</li>
-		
-			<li>
-				City
-			</li>
-
-			<li>
-				Gender
-			</li>
-		
-			<li>
-				Favorite Superhero or Villain
-			</li>
-		</ul>
-	</div>
-
-	<div class="profileRight">
-		<ul>
-			<li>
-				<%= current_user.fname %>
-			</li>
-			
+<div class="wrapper">
+	<div class="profileInfo">
+		<div class="profileLeft">
+			<ul>
 				<li>
-				 <%= current_user.city %>
+					Username
 				</li>
 
 				<li>
-					<%= current_user.gender %>
+					City
 				</li>
 
 				<li>
-					<%= current_user.superhero %>
+					Gender
 				</li>
-		</ul>
-	</div>
-</div>
-
-
-	
-<div class="feedForm">
-	<form action="/feed" method="POST">
-		<div class="feedPost">
-			<textarea name="[post]post" maxlength="150" placeholder="Write your post here"></textarea>
+			</ul>
 		</div>
-		
-		<div class="feedSub">
-			<input type="submit" value="ZAP IT!">
+
+		<div class="profileRight">
+			<ul>
+				<li>
+					<% if !@user.fname.nil? %>
+						<%= @user.fname %>
+					<% else %>
+						Add your first name!
+					<% end %>
+				</li>
+
+					<li>
+						<% if !@user.city.nil? %>
+						  <%= @user.city %>
+						<% else %>
+							Add your city!
+						<% end %>
+					</li>
+
+					<li>
+						<% if !@user.gender.nil? %>
+							<%= @user.gender %>
+						<% else %>
+							Add your gender!
+						<% end %>
+					</li>
+
+			</ul>
 		</div>
-	</form>
-</div>
-
-<% if current_user %>
-	<div class="posts">
-		<!-- create div styled like thought bubble, for reach one it will create one.> -->
-		<% current_user.posts.reverse_each do |tweet| %>
-			<div class="singleThought">
-				<p class="thought">
-					<%= tweet.post %>
-				</p>
-
-				<p class="thoughtId">
-					<%= tweet.created_at.to_s %>
-					<%= tweet.user.username %>
-				</p>
-			</div>
-		<% end %> 
 	</div>
-<% end %>
+
+	<%= render partial: "posts/new" %>
+
+
+	<% if current_user %>
+		<div class="posts">
+			<!-- create div styled like thought bubble, for reach one it will create one.> -->
+			<% current_user.posts.reverse_each do |tweet| %>
+				<div class="singleThought">
+					<p class="thought">
+						<%= tweet.post %>
+					</p>
+
+					<p class="thoughtId">
+						<%= tweet.created_at.to_s %>
+						<%= tweet.user.username %>
+					</p>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>
