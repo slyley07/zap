@@ -1,0 +1,19 @@
+<div class="feedForm">
+  <%= form_for [@user, @post] do |f| %>
+    <% if @post.errors.any? %>
+      <% @post.errors.full_messages.each do |msg| %>
+        <p>
+          <%= msg %>
+        </p>
+      <% end %>
+    <% end %>
+
+    <div class="feedPost">
+      <%= f.text_area :post, maxlength: :"150", placeholder: :"Write your post here" %>
+    </div>
+
+    <div class="feedSub">
+      <%= f.submit "ZAP IT!" %>
+    </div>
+  <% end %>
+</div>

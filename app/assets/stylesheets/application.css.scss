@@ -13,7 +13,6 @@
  *= require_self
  */
 
-
 @import 'bourbon/bourbon';
 // @import 'grid-settings';
 @import 'neat';
@@ -28,7 +27,7 @@ $black: #000000;
 $textShadow: -6px 6px 20px #000000;
 $mainWidth: 468px;
 $mainBorder: 2px solid #000000;
-$boxShadow: 0px 8px 28px 0px;
+$boxShadow: 0px 8px 28px 0px #000000;
 @import 'welcome';
 @import 'users';
 

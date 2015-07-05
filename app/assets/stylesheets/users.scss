@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .spikeBubble {
-
   h1 {
     font-size: 5em;
     margin-top: 80px;
@@ -11,34 +10,56 @@
 }
 
 .wrapper {
-  @include span-columns(8);
-  @include shift(2);
+  @include span-columns(4 of 12);
+  @include shift(4 of 12);
   clear: both;
   .profileInfo {
     background-color: $white;
     border: $mainBorder;
+    padding: 3px;
+    height: 86px;
+    margin-bottom: 20px;
+    box-shadow: $boxShadow;
 
-    .profileLeft {
+    .profileLeft, .profileRight {
+      @include span-columns(2 of 4);
       display: inline-block;
-      border: $mainBorder;
+      // border: $mainBorder;
+      padding: 0 2px;
 
-      li {
-        border: $mainBorder;
+      ul {
+        @include span-columns(2 of 2);
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          @include span-columns(2 of 2);
+          border: $mainBorder;
+          margin: 2px;
+        }
       }
     }
+  }
 
-    .profileRight {
-      display: inline-block;
+  .feedForm {
+    @include span-columns(6 of 6);
+
+    textarea {
+      @include span-columns(6 of 6);
+      box-shadow: $boxShadow;
       border: $mainBorder;
-
-      li {
-        border: $mainBorder;
-      }
+      margin-bottom: 10px;
     }
-    ul {
-      list-style-type: none;
-      padding: 0;
 
+    .feedSub input[type="submit"] {
+      @include span-columns(6 of 6);
+      border: $mainBorder;
+      font-family: $mainFont;
+      box-shadow: $boxShadow;
+      color: $primaryColor;
+      background-color: $secondaryColor;
+      font-size: 3em;
     }
   }
 }
