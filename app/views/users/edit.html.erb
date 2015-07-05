@@ -1,51 +1,18 @@
-<div class="mainHead">
+<div class="spikeBubble">
 	<h1>
 		<%= "Welcome #{@user.username}" %>
 	</h1>
 </div>
 
-<div class="account">
-	<h3>
-		Account Details
-	</h3>
+<div class="wrapper">
+	<div class="account">
+		<h3>
+			Account Details
+		</h3>
 
-	<form action="/account" method="POST">
-		<div class="formLeft">
-			<input type="text" name="[user]fname" placeholder="First Name" value= <%= @user.fname %>>
+		<%= render partial: 'form' %>
 
-			<br>
 
-			<input type="text" name="[user]lname" placeholder="Last Name" value= <%= @user.lname %>>
-
-			<br>
-
-			<input type="text" name="[user]pnumber" placeholder="Phone e.g. 555-555-5555" value= <%= @user.pnumber %>>
-
-			<br>
-
-			<input type="text" name="[user]city" placeholder="City" value= <%= @user.city %>>
-		</div>
-
-		<div class="formRight">
-			<input type="text" name="[user]gender" placeholder="Gender" value= <%= @user.gender %>>
-
-			<br>
-
-			<input type="text" name="[user]birthday" placeholder="Birthday ddmmyyyy" value= <%= @user.birthday %>>
-
-			<br>
-
-			<input type="text" name="[user]website" placeholder="Website" value= <%= @user.website %>>
-
-			<br>
-
-		</div>
-
-		<input type="submit" value="Submit" class="accSubmit">
-		<br>
-	</form>
-
-	<form action="/delete" method="POST">
-		<input type="submit" value="Delete" class="delAcc">
-	</form>
+		<%= link_to 'Close account', close_profile_path %>
+	</div>
 </div>

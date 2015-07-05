@@ -1,14 +1,7 @@
-<!-- <div class="login"> -->
-<div class="zapHead">
-	<h1>
-		Zap In!
-	</h1>
-</div>
-
 <div class="inFull">
-		<%= form_tag @user do %>
+		<%= form_tag '/', method: :post do %>
 			<div class="logForm">
-					<%= text_field_tag :email, nil, placeholder: 'Alias' %>
+					<%= email_field_tag :email, nil, placeholder: 'Alias' %>
 
 					<br>
 
@@ -20,4 +13,3 @@
 			<%=	submit_tag "ZAP!" %>
 		<% end %>
 </div>
-<!-- </div> -->

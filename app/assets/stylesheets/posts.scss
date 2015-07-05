@@ -1,3 +1,58 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  @include span-columns(4 of 12);
+  @include shift(4 of 12);
+  clear: both;
+
+  .feedForm {
+    @include span-columns(6 of 6);
+
+    textarea {
+      @include span-columns(6 of 6);
+      box-shadow: $boxShadow;
+      border: $mainBorder;
+      margin-bottom: 10px;
+      height: 5em;
+    }
+
+    .feedSub input[type="submit"] {
+      @include span-columns(6 of 6);
+      border: $mainBorder;
+      // font-family: $mainFont;
+      box-shadow: $boxShadow;
+      color: $primaryColor;
+      background-color: $secondaryColor;
+      font-size: 3em;
+    }
+  }
+
+  .posts {
+    @include span-columns(8);
+    @include shift(1);
+
+    .singleThought {
+    	@include span-columns(8 of 8);
+      @include shift(1);
+      background-image: url('speech2.png');
+    	background-repeat: no-repeat;
+    	// width: 500px;
+    	height: 200px;
+    	// margin: 0 auto;
+    	background-position: center;
+    	background-size: 100% 100%;
+    	text-align: center;
+      // display: inline-block;
+
+      .thought {
+        @include span-columns(8 of 8);
+      	padding: 25px 40px 0px  53px;
+      	font-size: 20px;
+      	// width: 392px;
+      	height: 65px;
+      }
+    }
+  }
+}

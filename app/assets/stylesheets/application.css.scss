@@ -10,352 +10,252 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery-ui/datepicker
  *= require_self
  */
 
 @import 'bourbon/bourbon';
-// @import 'grid-settings';
-@import 'neat';
-$mainFont: 'Bangers', cursive;
-$mainFontSize: 2em;
-$headFontSize: 100px;
-$primaryColor: #DB0001;
-$secondaryColor: #EDEF34;
-$tertiaryColor: #E12422;
-$white: #FFFFFF;
-$black: #000000;
-$textShadow: -6px 6px 20px #000000;
-$mainWidth: 468px;
-$mainBorder: 2px solid #000000;
-$boxShadow: 0px 8px 28px 0px #000000;
+@import 'base/base';
+@import 'neat/neat';
+
+// $headFontSize: 100px;
+
+
 @import 'welcome';
 @import 'users';
+@import 'posts';
 
-body {
-	@include outer-container(100%);
-	padding: 0;
-	margin: 0;
-	font-family: $mainFont;
-	background-image: url('polka.jpg');
-	background-repeat: repeat;
-	background-size: 350px;
 
-	.spikeBubble {
-	  @include span-columns(6 of 12);
-	  @include shift(3 of 12);
-	  background-image: url('spike3.png');
-	  background-size: 460px 260px;
-	  background-repeat: no-repeat;
-	  background-position: center;
-	  height: 270px;
+html {
+ height: 100%;
 
-		h1 {
-	    @include span-columns(4 of 6);
-	    @include shift(1);
-	    text-align: center;
-	    color: $primaryColor;
-	    text-shadow: $textShadow;
+	body {
+		@include outer-container(100%);
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		background-image: url('polka.jpg');
+		background-repeat: repeat;
+		background-size: 350px;
+
+.wrapper-for-content-outside-of-footer {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+		.spikeBubble {
+		  @include span-columns(6 of 12);
+		  @include shift(3 of 12);
+		  background-image: url('spike3.png');
+		  background-size: 460px 260px;
+		  background-repeat: no-repeat;
+		  background-position: center;
+		  height: 270px;
+
+			h1 {
+		    @include span-columns(4 of 6);
+		    @include shift(1);
+		    text-align: center;
+		    color: $primaryColor;
+		    text-shadow: $textShadow;
+		  }
+		}
+
+	.navBar {
+		float: left;
+		background-image: url('speech2.png');
+		background-repeat: no-repeat;
+		background-size: 180px 300px;
+		padding: 20px 44px;
+		height: 295px;
+
+		nav{
+			text-align: center;
+		}
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: $primaryColor;
+			font-size: 2em;
+			margin: 0;
+			padding: 0;
+		}
+
+		input {
+			border: none;
+			font-size: 2em;
+			background-color: $white;
+			color: $primaryColor;
+			cursor: pointer;
+		}
+	}
+}
+
+	.wrapper-for-content-outside-of-footer:after {
+	  content: "";
+	  display: block;
+	}
+
+	.footer-2, .wrapper-for-content-outside-of-footer:after {
+		clear: both;
+	  height: 17em;
+
+	  @include media($large-screen) {
+	    height: 4em;
 	  }
 	}
-//
-// // .weird {
-// // 	width: 1340px;
-// // 	margin: 0 auto 210px auto;
-// // 	height: auto;
-// // }
-//
-//
-// .navBar {
-// 	float: left;
-// 	z-index: -1;
-// 	background-image: url('speech2.png');
-// 	background-repeat: no-repeat;
-// 	background-size: 180px 300px;
-// 	background-position: center;
-// 	padding: 120px;
-// 	height: 265px;
-//
-// 	nav{
-// 		text-align: center;
-// 	}
-//
-// 	ul {
-// 		list-style-type: none;
-// 		padding: 0;
-// 		margin: 0;
-// 	}
-//
-// 	li {
-// 		margin: 0;
-// 		padding: 0;
-// 	}
-//
-// 	a {
-// 		text-decoration: none;
-// 		color: $primaryColor;
-// 		font-size: $mainFontSize;
-// 		margin: 0;
-// 		padding: 0;
-// 	}
-//
-// 	input {
-// 		border: none;
-// 		font-family: $mainFont;
-// 		font-size: $mainFontSize;
-// 		background-color: $white;
-// 		color: $primaryColor;
-// 		cursor: pointer;
-// 	}
-// }
-//
-// //BANNER
-//
-// // .speech {
-// // 	position: absolute;
-// // 	top: 12px;
-// // 	width: 97%;
-// // 	margin: 0 0 0 38px;
-// // 	text-align: center;
-// // 	z-index: -5;
-//
-// // 	img {
-// // 		width: 478px;
-// // 		height: 215px;
-// // 		z-index: -4;
-// // 		margin: 0 auto;
-// // 	}
-// // }
-//
-// .head {
-// 	margin: 20px auto;
-// 	padding-top: 10px;
-// 	text-align: center;
-// 	font-size: $headFontSize;
-// 	z-index: -1;
-// }
-//
-// footer {
-// 	position: fixed;
-// 	background-color: $black;
-// 	right: 0;
-// 	bottom: 0;
-// 	left: 0;
-// 	text-align: center;
-// 	width: 100%;
-// }
-//
-// .footAll {
-// 	width: 180px;
-// 	margin: 0 auto;
-// 	height: 180px;
-// }
-//
-// .footerUL {
-// 	float: left;
-// 	margin: 10px auto;
-// 	font-size: $mainFontSize
-//
-// 	ul {
-// 		list-style-type: none;
-// 		margin: 0;
-// 		padding: 0;
-// 	}
-//
-// 	a {
-// 		color: $secondaryColor;
-// 		text-decoration: none;
-// 	}
-// }
-//
-// .footLog {
-// 	border: none;
-// 	font-family: $mainFont;
-// 	font-size: $mainFontSize / 2;
-// 	background-color: tint($black, 50%);
-// 	color: $secondaryColor;
-// 	cursor: pointer;
-// }
-//
-// .icon {
-// 	width: 44px;
-// 	height: auto;
-// 	border-radius: 10px;
-// 	margin: 5px;
-// }
-//
-// .account {
-// 	width: 962px;
-// 	text-align: center;
-// 	border: $mainBorder;
-// 	margin: 0 auto;
-// 	background-color: $white;
-// 	box-shadow: $boxShadow;
-// 	height: 328px;
-//
-// 	h3 {
-// 		border: $mainBorder;
-// 		margin: 2px;
-// 		background-color: $white;
-// 		font-size: 3em;
-// 		background-color: $secondaryColor;
-// 	}
-//
-// 	input[type="text"] {
-// 		font-size: 1em;
-// 		margin: 10px 10px;
-// 		width: 443px;
-// 	}
-// }
-//
-// .formLeft {
-// 	float: left;
-// 	width: 476px;
-// 	border: $mainBorder;
-// 	margin: 0 2px 2px 2px;
-// }
-//
-// .formRight {
-// 	float: left;
-// 	border: $mainBorder;
-// 	margin: 0 0 2px 0;
-// }
-//
-// .accSubmit {
-// 	border: $mainBorder;
-// 	font-family: $mainFont;
-// 	font-size: $mainFontSize * 2;
-// 	// background-color: $white;
-// 	color: $black;
-// 	margin: 0 2px 36px 2px;
-// 	background-color: $primaryColor;
-// 	cursor: pointer;
-// }
-//
-// .delAcc {
-// 	border: $mainBorder;
-// 	font-family: $mainFont;
-// 	font-size: $mainFontSize;
-// 	color: $primaryColor;
-// 	box-shadow: $boxShadow;
-// 	cursor: pointer;
-// }
-//
-// .feedForm {
-// 	width: 962px;
-// 	margin: 10px auto;
-// 	border: $mainBorder;
-// 	background-color: $white;
-// 	height: 58px;
-// 	box-shadow: $boxShadow;
-// }
-//
-// .feedPost {
-// 	width: 500px;
-// 	margin: 2px;
-// 	border: $mainBorder;
-// 	float: left;
-// 	background-color: $white;
-// 	height: 50px;
-//
-// 	textarea {
-// 		width: 490px;
-// 		margin: 2px;
-// 		height: 39px;
-// 		resize: none;
-// 	}
-// }
-//
-// .feedSub {
-// 	width: 450px;
-// 	float: left;
-// 	margin: 2px 2px 2px 0;
-//
-// 	input[type="submit"] {
-// 		width: 450px;
-// 		height: 54px;
-// 		margin: 0 2px 0 0;
-// 		border: $mainBorder;
-// 		background-color: $primaryColor;
-// 		font-family: $mainFont;
-// 		font-size: 3em;
-// 		padding: 2px;
-// 		color: $tertiaryColor;
-// 		cursor: pointer;
-// 	}
-// }
-//
-// .posts {
-// 	width: 1012px;
-// 	margin: 0 auto;
-// 	height: 1000px;
-// }
-//
-// .singleThought {
-// 	background-image: url('speech2.png');
-// 	background-repeat: no-repeat;
-// 	width: 500px;
-// 	height: 200px;
-// 	margin: 0 auto;
-// 	background-position: center;
-// 	background-size: 500px 200px;
-// 	text-align: center;
-// 	float: left;
-// }
-//
-// .thought {
-// 	padding: 25px 40px 0px  53px;
-// 	font-size: 20px;
-// 	width: 392px;
-// 	height: 65px;
-// }
-//
-// .profileInfo {
-// 	width: 580px;
-// 	height: 154px;
-// 	margin: 0 auto;
-// 	background-color: $black;
-// 	border: $mainBorder;
-// 	box-shadow: $boxShadow;
-//
-// 	ul {
-// 		width: 287px;
-// 		list-style-type: none;
-// 		margin: 0 auto;
-// 		padding: 0;
-// 		font-size: 26px;
-// 	}
-//
-// 	li {
-// 		border: $mainBorder;
-// 		margin: 0 0 2px 0;
-// 		padding: 2px;
-// 	}
-// }
-//
-// .profileLeft {
-// 	float: left;
-// 	margin: 2px;
-// }
-//
-// .profileRight {
-// 	float: left;
-// 	margin: 2px 2px 2px 0;
-// }
-//
-// .memList {
-// 	background-color: $black;
-// 	width: 700px;
-// 	margin: 0 auto;
-// 	padding: 2px;
-// 	list-style-type: none;
-// 	text-align: center;
-// 	border: $mainBorder;
-// 	font-size: 28px;
-// 	box-shadow: $boxShadow;
-//
-// 	li {
-// 		border: $mainBorder;
-// 		padding: 3px;
-// 		margin: 2px;
-// 	}
+
+	.footer-2 {
+	  $base-spacing: 1em;
+	  $action-color: #477DCA !default;
+	  $medium-screen: em(640) !default;
+	  $large-screen: em(860) !default;
+	  $footer-background: $black;
+	  $footer-color: white;
+	  $footer-link-color: $secondaryColor;
+	  $footer-disclaimer-color: transparentize($footer-color, 0.6);
+
+	  background: $footer-background;
+	  padding: $base-spacing;
+	  width: 100%;
+	  display: block;
+		// bottom: 0;
+	  // position: absolute;
+		// height: 100%;
+
+	  .footer-logo {
+	    margin: 0 1em 0 0;
+	    // margin-bottom: 1em;
+			color: $footer-link-color;
+			// height: 1em;
+
+			h1 {
+				margin: 0;
+				font-size: 2em;
+			}
+
+	    @include media($large-screen) {
+	      float: left;
+	      margin-bottom: 0;
+	    }
+	  }
+
+	  .footer-logo img {
+	    height: 1.6em;
+	  }
+
+	  ul {
+	    line-height: 1.5em;
+	    margin: 0 0 1em 0;
+	    padding: 0;
+
+	    @include media($large-screen) {
+	      float: left;
+	      line-height: 2em;
+	      margin-left: 1em;
+	      margin-bottom: 0;
+	    }
+	  }
+
+	  ul li {
+	    // font-weight: 800;
+	    list-style: none;
+	    padding-right: 1em;
+
+	    @include media($large-screen) {
+	      display: inline;
+	      text-align: left;
+	    }
+	  }
+
+	  ul li a {
+	    color: $footer-link-color;
+	    text-decoration: none;
+			font-size: 2em;
+
+	    &:focus,
+	    &:hover {
+	      color: transparentize($footer-color, 0);
+	    }
+	  }
+
+	  .footer-secondary-links {
+	    @include media($large-screen) {
+	      float: right;
+	    }
+
+	    li {
+	      font-size: 0.8em;
+	      font-weight: 400;
+	    }
+
+	    ul.footer-social {
+	      margin: 1em 0 0 0;
+
+	      @include media($large-screen) {
+	        float: right;
+	        margin-top: 0;
+	      }
+
+	      li {
+	        font-size: 1em;
+	        float: left;
+	        line-height: 0;
+	        margin: 0;
+	        padding-right: 0.7em;
+
+	        &:last-child {
+	          padding-right: 0;
+	        }
+	      }
+
+	      img {
+	        height: 1em;
+	        opacity: 0.7;
+	        padding: 1px;
+					border-radius: 10px;
+
+	        &:focus,
+	        &:hover {
+	          opacity: 1;
+	        }
+	      }
+	    }
+	  }
+	}
+
+	// .icon {
+	// 	width: 44px;
+	// 	// height: auto;
+	// 	margin: 5px;
+	// }
+
+	// .memList {
+	// 	background-color: $black;
+	// 	width: 700px;
+	// 	margin: 0 auto;
+	// 	padding: 2px;
+	// 	list-style-type: none;
+	// 	text-align: center;
+	// 	border: $mainBorder;
+	// 	font-size: 28px;
+	// 	box-shadow: $boxShadow;
+	//
+	// 	li {
+	// 		border: $mainBorder;
+	// 		padding: 3px;
+	// 		margin: 2px;
+	// 	}
+	}
 }

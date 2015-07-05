@@ -1,0 +1,29 @@
+<div class="spikeBubble">
+  <h1>
+  	Delete account?
+  </h1>
+</div>
+
+<div class="wrapper">
+  <div class="warning">
+    <p>
+    	Warning! You are about to delete your account. This cannot be undone!
+    </p>
+
+    <div class="deletion">
+      <h3>
+      	Confirm your password
+      </h3>
+
+      <%= form_for current_user, method: :delete do |f| %>
+      	<div>
+      		<%= f.password_field :password, placeholder: 'password' %>
+      	</div>
+
+      	<div class="closer">
+      		<%= f.submit "Close my account :(" %>
+      	</div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -12,6 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/datepicker
 //= require welcome
 //= require turbolinks
 //= require_tree .
+
+$("#datepicker").datepicker({
+  dateFormat: "yy-mm-dd",
+  minDate: (0, 0, 30)
+});
