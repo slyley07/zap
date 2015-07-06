@@ -3,9 +3,10 @@
 		<div class="signForm">
 			<%= f.email_field :email, placeholder: "email"  %>
 
-			<br>
 
 			<% if @user == current_user %>
+				<br>
+
 				<%= f.text_field :username, placeholder: "alias" %>
 
 				<br>
@@ -41,11 +42,9 @@
 			<% else %>
 				<%= f.password_field :password, placeholder: "password" %>
 
-				<br>
 
 				<%= f.password_field :password_confirmation, placeholder: "confirm your password", class: :confirm %>
 
-				<br>
 			<% end %>
 		</div>
 
