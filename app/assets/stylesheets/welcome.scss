@@ -229,11 +229,11 @@
             .signForm {
               border: $mainBorder;
               padding: $mainPadding;
-              height: 154px;
+              // height: 154px;
 
               input {
                 width: 100%;
-                padding: 3px;
+                padding: $mainPadding;
               }
 
               .confirm {
@@ -245,8 +245,9 @@
               border: $mainBorder;
               background-color: $primaryColor;
               color: $secondaryColor;
+              margin-bottom: $mainPadding;
+              margin-top: $mainPadding;
               width: 100%;
-              margin-top: 3px;
               font-size: 53px;
               padding: 0;
               // height: 60px;

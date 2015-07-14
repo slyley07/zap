@@ -16,6 +16,7 @@
       border: $mainBorder;
       margin-bottom: 10px;
       height: 5em;
+      font-size: 1.5em;
     }
 
     .feedSub input[type="submit"] {
@@ -32,6 +33,7 @@
   .posts {
     @include span-columns(8);
     @include shift(1);
+    margin-top: 15px;
 
     .singleThought {
     	@include span-columns(8 of 8);
@@ -49,7 +51,7 @@
       .thought {
         @include span-columns(8 of 8);
       	padding: 25px 40px 0px  53px;
-      	font-size: 20px;
+      	font-size: 25px;
       	// width: 392px;
       	height: 65px;
       }

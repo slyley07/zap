@@ -69,7 +69,7 @@
 					</p>
 
 					<p class="thoughtId">
-						<%= tweet.created_at.to_s %>
+						<%= time_ago_in_words(tweet.created_at) %>
 						<%= tweet.user.username %>
 					</p>
 				</div>

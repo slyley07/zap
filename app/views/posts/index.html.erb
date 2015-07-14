@@ -17,8 +17,12 @@
 					</p>
 
 					<p class="thoughtId">
-						<%= tweet.created_at.to_s %>
-						<%= tweet.user %>
+						<%= time_ago_in_words(tweet.created_at) %> ago by
+						<% if tweet.user.username? %>
+							<%= tweet.user.username %>
+						<% else %>
+							<%= tweet.user.email %>
+						<% end %>
 					</p>
 				</div>
 			<% end %>
